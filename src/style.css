@@ -1,0 +1,49 @@
+.weather-app {
+  max-width: 700px;
+  background-color: #fffdfb;
+  border: 0.1px solid;
+  border-color: #eaf6f6;
+  border-radius: 20px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  margin: 20px auto;
+}
+body {
+  font-family: "Kiwi Maru", serif;
+}
+h1 {
+  text-align: center;
+  margin: 20px;
+}
+
+h2 {
+  text-align: center;
+}
+h3 {
+  text-align: center;
+  font-size: 1.5rem;
+  font-style: italic;
+}
+.search-form {
+  margin-bottom: 10px;
+}
+.current {
+  margin-top: 20px;
+  margin-left: 280px;
+  font-size: x-large;
+  font-weight: bold;
+  line-height: 1;
+}
+.units {
+  position: relative;
+  top: -80px;
+}
+
+.details {
+  font-weight: 100;
+}
+
+#forecast {
+  margin: 30px 0 30px 75px;
+  padding: 20px;
+}
