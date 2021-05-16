@@ -39,10 +39,6 @@ function formatDate(date) {
   return `${weekDay} ${day}. ${month} ${year}, ${hour}:${minutes}`;
 }
 
-let dateElement = document.querySelector("#current-date");
-let currentTime = new Date();
-dateElement.innerHTML = formatDate(currentTime);
-
 function showTemperature(response) {
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(
@@ -99,9 +95,6 @@ function showPosition(position) {
   axios.get(`${apiUrl}&appid=${apiKey}&units=${units}`).then(showTemperature);
 }
 
-let current = document.querySelector("#current");
-current.addEventListener("click", getCurrentLocation);
-
 function convertToFahrenheit(event) {
   event.preventDefault();
   let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
@@ -116,6 +109,12 @@ function convertToCelsius(event) {
   fahrenheitLink.classList.remove("active");
   celsiusLink.classList.add("active");
 }
+
+document.querySelector("#current-date").innerHTML = formatDate(new Date());
+
+let current = document.querySelector("#current");
+current.addEventListener("click", getCurrentLocation);
+
 let celsiusTemp = null;
 
 let searchForm = document.querySelector("#search-form");
