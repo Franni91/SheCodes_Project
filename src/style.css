@@ -38,13 +38,6 @@ h3 {
   font-weight: 700;
 }
 
-.current i {
-  font-size: x-large;
-  font-weight: bold;
-  line-height: 80px;
-  font-weight: 700;
-}
-
 .current .units {
   line-height: 28px;
   font-weight: 300;
