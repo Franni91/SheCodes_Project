@@ -27,16 +27,30 @@ h3 {
 .search-form {
   margin-bottom: 10px;
 }
+
 .current {
-  margin-top: 20px;
+  margin-top: 15px;
   margin-left: 280px;
+  padding: 0;
   font-size: x-large;
   font-weight: bold;
-  line-height: 1;
+  line-height: 80px;
+  font-weight: 700;
 }
-.units {
+
+.current i {
+  font-size: x-large;
+  font-weight: bold;
+  line-height: 80px;
+  font-weight: 700;
+}
+
+.current .units {
+  line-height: 28px;
+  font-weight: 300;
+  font-size: smaller;
   position: relative;
-  top: -80px;
+  top: -9px;
 }
 
 .details {
