@@ -45,10 +45,9 @@ dateElement.innerHTML = formatDate(currentTime);
 
 function showTemperature(response) {
   document.querySelector("#city").innerHTML = response.data.name;
-  let temperature = Math.round(response.data.main.temp);
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = `${temperature}`;
-
+  document.querySelector("#temperature").innerHTML = Math.round(
+    response.data.main.temp
+  );
   document.querySelector("#maxTemp").innerHTML = Math.round(
     response.data.main.temp_max
   );
@@ -65,6 +64,8 @@ function showTemperature(response) {
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+
+  celsiusTemp = response.data.main.temp;
 }
 
 function search(city) {
@@ -80,11 +81,6 @@ function handleSubmit(event) {
   let city = document.querySelector("#city-input").value;
   search(city);
 }
-
-let searchForm = document.querySelector("#search-form");
-searchForm.addEventListener("submit", handleSubmit);
-
-search("Frankfurt am Main");
 
 function getCurrentLocation(event) {
   event.preventDefault();
@@ -105,3 +101,30 @@ function showPosition(position) {
 
 let current = document.querySelector("#current");
 current.addEventListener("click", getCurrentLocation);
+
+function convertToFahrenheit(event) {
+  event.preventDefault();
+  let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
+  document.querySelector("#temperature").innerHTML = Math.round(fahrenheitTemp);
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+}
+
+function convertToCelsius(event) {
+  event.preventDefault();
+  document.querySelector("#temperature").innerHTML = Math.round(celsiusTemp);
+  fahrenheitLink.classList.remove("active");
+  celsiusLink.classList.add("active");
+}
+let celsiusTemp = null;
+
+let searchForm = document.querySelector("#search-form");
+searchForm.addEventListener("submit", handleSubmit);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", convertToFahrenheit);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", convertToCelsius);
+
+search("Frankfurt am Main");
