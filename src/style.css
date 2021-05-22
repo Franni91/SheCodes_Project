@@ -60,9 +60,23 @@ h3 {
   color: inherit;
 }
 
-#forecast {
+.forecast {
   margin: 30px 0 30px 75px;
   padding: 20px;
+  text-align: center;
+  color: black;
+}
+.forecast-day {
+  font-size: 15px;
+  opacity: 0.6;
+}
+
+.forecast-temperatures {
+  font-size: 13px;
+}
+
+.forecast-temperatures-min {
+  opacity: 0.6;
 }
 #githubLink {
   text-align: center;
