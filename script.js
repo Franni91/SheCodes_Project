@@ -39,6 +39,34 @@ function formatDate(date) {
   return `${weekDay} ${day}. ${month} ${year}, ${hour}:${minutes}`;
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+        <div class="col-2">
+            <div class="forecast-day">${day}</div>
+            <img
+              src="http://openweathermap.org/img/wn/50d@2x.png"
+              alt=""
+              width="42"
+            />
+            <div class="forecast-temperatures">
+              <span class="forecast-temperatures-min">8°</span>
+              <span class="forecast-temperatures-max">18°</span>
+             </div>
+         </div>    
+    `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function showTemperature(response) {
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(
@@ -127,3 +155,4 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", convertToCelsius);
 
 search("Frankfurt am Main");
+displayForecast();
