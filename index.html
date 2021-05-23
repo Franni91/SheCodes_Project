@@ -25,23 +25,23 @@
     <div class="container weather-app">
       <h1>Everywhere you go, <br> always take the weather with you</h1>
       <form id="search-form">
-      <div class="row">
+       <div class="row">
         <div class="col-6">
             <input type="form" 
-                  placeholder="Type any city around the world"
+                   placeholder="Type any city around the world"
                    autofocus="on"
                    class="form-control shadow-sm"
-                    id="city-input"
-                    autocomplete="off"
+                   id="city-input"
+                   autocomplete="off"
                     />
          </div>
-        <div class="col-3">
+           <div class="col-3">
               <input type="submit" value="Search" class="form-control btn btn-primary shadow">
-        </div>
-        <div class="col-3">
+           </div>
+           <div class="col-3">
               <input type="submit" value="Current" class="form-control btn btn-info shadow" id="current">
-        </div>
-      </div>
+          </div>
+       </div>
       </form>
     
       <hr />
@@ -50,31 +50,27 @@
 
       <div class="current">
         <div class="clearfix">
-       <img 
-       src=""
-       alt=""
-       id="icon" />
+        <img 
+         src=""
+         alt=""
+        id="icon" />
         <span id="temperature"></span>
-       <small> <span class="units">
+        <small> <span class="units">
           <a href="#" id="celsius-link" class="active"> °C|</a>
-          
           <a href="#" id="fahrenheit-link">°F </a></span> </small>
         </div>
       </div>
-
-<div class="row details">
-  <div class="col-6 text-end">min: <span id="minTemp"></span>°C</div>
-  <div class="col-6">max: <span id="maxTemp"> </span>°C</div>
-  <div class="col-6 text-end">humidity: <span id="humidity"> </span> %</div>
-  <div class="col-6">wind: <span id="wind"> </span> m/sec</div>
-</div>
-
-<div class="forecast" id="forecast">
-      
-  </div>
+      <div class="current-description"> <strong><span id="currentDescription"></span></strong></div>
+      <div class="row details">
+        <div class="col-6 text-end">min: <span id="minTemp"></span>°C</div>
+        <div class="col-6">max: <span id="maxTemp"> </span>°C</div>
+        <div class="col-6 text-end">humidity: <span id="humidity"> </span> %</div>
+       <div class="col-6">wind: <span id="wind"> </span> m/sec</div>
       </div>
-      </div>
+
+         <div class="forecast" id="forecast"></div>
     </div>
+      
     <p id="githubLink"> <a href="https://github.com/Franni91/SheCodes_Project">Open-source code</a> by Franziska Schäfer</a></p>
     <script src="script.js"></script>
   </body>

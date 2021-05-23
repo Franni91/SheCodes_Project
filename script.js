@@ -97,6 +97,9 @@ function showTemperature(response) {
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
   );
+  document.querySelector("#currentDescription").innerHTML =
+    response.data.weather[0].description;
+
   document.querySelector("#maxTemp").innerHTML = Math.round(
     response.data.main.temp_max
   );
@@ -107,6 +110,7 @@ function showTemperature(response) {
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
+
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",

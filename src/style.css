@@ -6,6 +6,7 @@
   border-color: #a7d7c5;
   border-radius: 20px;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+
   margin: 10px auto;
   font-family: "Caveat", cursive;
 }
@@ -28,27 +29,16 @@ h3 {
 }
 
 .current {
-  margin-top: 15px;
-  margin-left: 280px;
-  padding: 0;
+  margin-left: 260px;
   font-size: x-large;
   font-weight: bold;
   line-height: 80px;
-  font-weight: 700;
+  font-weight: 900;
 }
 
-.current .units {
-  line-height: 28px;
-  font-weight: 300;
-  font-size: smaller;
-  position: relative;
-  top: -9px;
+#temperature {
+  font-size: larger;
 }
-
-.details {
-  font-weight: 100;
-}
-
 .active {
   color: black;
   text-decoration: none;
@@ -59,19 +49,37 @@ h3 {
   color: inherit;
 }
 
+.current .units {
+  line-height: 28px;
+  font-weight: 300;
+  font-size: smaller;
+  position: relative;
+  top: -9px;
+}
+
+.current-description {
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.details {
+  font-weight: 300;
+  font-size: 20px;
+}
+
 .forecast {
-  margin: 30px 0 30px 75px;
-  padding: 20px;
+  margin: 15px 5px 10px 75px;
   text-align: center;
   color: black;
 }
 .forecast-day {
-  font-size: 15px;
+  font-size: 17px;
   opacity: 0.6;
 }
 
 .forecast-temperatures {
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .forecast-temperatures-min {
